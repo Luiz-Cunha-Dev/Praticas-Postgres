@@ -1,0 +1,1 @@
+SELECT schools.name AS school, courses.name AS course, COUNT(educations."courseId") AS studentsCount, educations.status FROM schools JOIN educations ON educations."schoolId = schools.name JOIN courses ON educations."courseId" = courses.id WHERE educations.status = ongoing OR educations.status = finished GROUP BY courses.name;
